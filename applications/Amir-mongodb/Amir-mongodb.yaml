@@ -8,8 +8,6 @@ inputs:
 - TEXT: HardcodedText
 - SANDBOX
 - VNET
-- MONGO_DNS
-- NAME_FROM_COPY
 - TEST
 # - APP_NAME: $colony.applications.app_name.outputs.output_name
 # - SERVICE_NAME: $colony.services.services_name.outputs.output_name
