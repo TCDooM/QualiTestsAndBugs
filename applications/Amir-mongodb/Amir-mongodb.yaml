@@ -1,0 +1,74 @@
+spec_version: 1
+kind: application
+inputs:
+- AZURE_VM_SIZE: Standard_B1ms
+- AWS_INSTANCE_TYPE: m5.large
+- IMAGE: none
+- AMIR: test.txt
+- TEXT: HardcodedText
+- SANDBOX
+- VNET
+- MONGO_DNS
+- NAME_FROM_COPY
+- TEST
+# - APP_NAME: $colony.applications.app_name.outputs.output_name
+# - SERVICE_NAME: $colony.services.services_name.outputs.output_name
+infrastructure:
+  connectivity:
+    # external: 
+    #   - web:
+    #       port: 80
+    #       path: ''
+    internal:
+      - port_info:
+          port: 27017
+  compute:
+    spec:      
+      azure:
+        vm_size: $AZURE_VM_SIZE
+      aws:
+        instance_type: $AWS_INSTANCE_TYPE
+        
+configuration:
+  start:
+    script: mongodb-command.sh
+  initialization:
+    script: mongodb.sh  # will install mongodb 3.4
+  healthcheck:
+    timeout: 1000
+    wait_for_ports: 27017
+    
+source:
+  image:    
+    azure_image:
+    #- urn: Canonical:UbuntuServer:16.04-LTS:latest
+    - gallery:
+        # subscription_id: "729f46e1-ee18-4735-9142-10893207402a"
+        resource_group: "Amir_Test_RG"
+        shared_image_gallery: "MyGallery"
+        image_definition: "My1604Gallery"
+        # image_version: "1.0.0"
+    # - :custom_image
+    #     subscription_id: "729f46e1-ee18-4735-9142-10893207402a"
+    #     resource_group: "Amir_Test_RG"
+    #     image: "Amir-Ubuntu-1604-image-20210509163019"
+    # - custom: "/subscriptions/729f46e1-ee18-4735-9142-10893207402a/resourceGroups/Amir_Test_RG/providers/Microsoft.Compute/galleries/MyGallery/images/My1604Gallery/versions/1.0.0"
+    # - custom: "/subscriptions/729f46e1-ee18-4735-9142-10893207402a/resourceGroups/Amir_Test_RG/providers/Microsoft.Compute/images/Amir-Ubuntu-1604-image-20210509163019"
+      # username: adminuser
+    docker_image:
+    - name: mongo
+      tag: 4.0
+    ami:
+      - id: ami-0d78bb7ea9f297e5c #public custom image ami-08660f1c6fb6b01e7 
+        region: eu-west-1
+        username: ubuntu
+      - id: ami-0565af6e282977273
+        region: us-east-1
+        username: ubuntu
+      - id: ami-02d0ea44ae3fe9561
+        region: us-west-2
+        username: ubuntu
+  os_type: linux
+  
+debugging: 
+  connection_protocol: SSH
