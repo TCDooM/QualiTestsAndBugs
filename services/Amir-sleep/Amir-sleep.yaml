@@ -12,7 +12,7 @@ module:
 terraform_version: 0.11.11
 
 variables:
-  # var_file: terraform.tfvars  #optional
+  var_file: terraform.tfvars  #optional
   values:
     - DURATION: $DURATION
 
