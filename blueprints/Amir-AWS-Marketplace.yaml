@@ -35,9 +35,9 @@ applications:
         - AWS_INSTANCE_TYPE: t2.small
         - TEXT: $TEXT
         # - TEXT: blabla
-        - SANDBOX: $colony.environment.id 
-        - VNET: $colony.environment.virtual_network_id
-        - TEST: $colony.services.Amir-sleep.outputs.hostname
+        # - SANDBOX: $colony.environment.id 
+        # - VNET: $colony.environment.virtual_network_id
+        # - TEST: $colony.services.Amir-sleep.outputs.hostname
       depends_on:
         - Amir-sleep
 
