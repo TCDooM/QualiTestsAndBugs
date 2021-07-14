@@ -7,7 +7,7 @@ inputs:
 outputs:
   - hostname
 module:
-  source: github.com/QualiNext/Colony-Playground/terraform/Amir-sleep
+  source: github.com/QualiNext/Colony-Playground/terraform/amir-sleep
 
 terraform_version: 0.11.11
 

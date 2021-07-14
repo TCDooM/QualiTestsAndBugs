@@ -35,22 +35,11 @@ applications:
         - AWS_INSTANCE_TYPE: t2.small
         - TEXT: $TEXT
         # - TEXT: blabla
-        - SANDBOX: $colony.environment.id 
-        - VNET: $colony.environment.virtual_network_id
-        - MONGO_DNS: $colony.applications.Amir-mongodb-copy.dns
-        - NAME_FROM_COPY: $colony.applications.Amir-mongodb-copy.outputs.name
-        - TEST: $colony.services.Amir-sleep.outputs.hostname
+        # - SANDBOX: $colony.environment.id 
+        # - VNET: $colony.environment.virtual_network_id
+        # - TEST: $colony.services.Amir-sleep.outputs.hostname
       depends_on:
-        - Amir-mongodb-copy
-        - Amir-sleep
-  - Amir-mongodb-copy:
-      target: Amir-VM1
-      input_values:
-        - AWS_INSTANCE_TYPE: t2.small
-        - TEXT: $TEXT
-        # - TEXT: blabla
-        - SANDBOX: $colony.environment.id 
-        - VNET: $colony.environment.virtual_network_id
+        - amir-sleep
 
 #       input_values:
 #         - DB_USER: $DB_USER
@@ -61,7 +50,7 @@ applications:
 #         - rds-mysql-instance
 
 services:
-  - Amir-sleep:
+  - amir-sleep:
       outputs:
         - hostname
       input_values:

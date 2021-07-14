@@ -6,11 +6,9 @@ inputs:
 - IMAGE: none
 - AMIR: test.txt
 - TEXT: HardcodedText
-- SANDBOX
-- VNET
-- MONGO_DNS
-- NAME_FROM_COPY
-- TEST
+- SANDBOX: Sand
+- VNET: 127.0.0.1
+- TEST: Test
 # - APP_NAME: $colony.applications.app_name.outputs.output_name
 # - SERVICE_NAME: $colony.services.services_name.outputs.output_name
 infrastructure:
