@@ -40,6 +40,7 @@ applications:
         # - TEST: $colony.services.Amir-sleep.outputs.hostname
       depends_on:
         - amir-sleep
+        - TEST-ME
 
 #       input_values:
 #         - DB_USER: $DB_USER
@@ -55,6 +56,11 @@ services:
         - hostname
       input_values:
         - DURATION: 1
+  - TEST-ME:
+      outputs:
+        - hostname
+      input_values:
+        - DURATION: 3
   # - sleep:
   #     input_values:
   #       - DURATION: 2
