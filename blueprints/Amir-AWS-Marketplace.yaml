@@ -51,16 +51,16 @@ applications:
 #         - rds-mysql-instance
 
 services:
-  - amir-sleep:
-      outputs:
-        - hostname
-      input_values:
-        - DURATION: 1
   - TEST-ME:
       outputs:
         - hostname
       input_values:
         - DURATION: 3
+  - amir-sleep:
+      outputs:
+        - hostname
+      input_values:
+        - DURATION: 1
   # - sleep:
   #     input_values:
   #       - DURATION: 2
