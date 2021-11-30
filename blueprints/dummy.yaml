@@ -10,8 +10,6 @@ metadata:
   - apple_sys_tag_version : 2020-04-29
   - apple_sys_app_id: abcde
   - test: value
-  yaya: hoho
-  nana : hoho
 
 clouds:
   - AWS: eu-west-1
