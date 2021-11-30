@@ -6,6 +6,9 @@ environmentType: sandbox
 metadata:
   description:
     blueprint with aws marketplace app
+  tags:
+  - apple_sys_tag_version : 2020-04-29
+  - apple_sys_app_id : abcde
 
 clouds:
   - AWS: eu-west-1
@@ -38,7 +41,3 @@ services:
 
 debugging:
   availability: on
-  
-tags:
-  - apple_sys_tag_version : 2020-04-29
-  - apple_sys_app_id : abcde
