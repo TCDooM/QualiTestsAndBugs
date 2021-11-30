@@ -1,1 +1,44 @@
-123
+spec_version: 1
+
+kind: blueprint
+environmentType: sandbox
+
+metadata:
+  description:
+    blueprint with aws marketplace app
+
+clouds:
+  - AWS: eu-west-1
+
+inputs:
+  - DB_USER: root  # Used to define the db admin account
+  - DB_PASS:
+      display_style: masked
+      description: please set the root database password please set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database passwordplease set the root database password
+      default_value: Colony!123
+  # Used to define the db admin password
+  - DB_NAME: demo_db  # DB_NAME - a target database name
+  - TEXT:
+      default_value: default_text
+      display_style: masked 
+      description: M r and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,  Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,  Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,  Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,  Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,  Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you’d expect to be involved in anything strange or mysterious, because they just didn’t hold with such nonsense. Mr Dursley was the director of a fi rm called Grunnings,
+      optional: true 
+  - PORT: 3000
+  - API_PORT: 3001
+  - AWS_INSTANCE_TYPE: t2.large
+
+applications:
+
+services:
+  - amir-sleep:
+      outputs:
+        - hostname
+      input_values:
+        - DURATION: 1
+
+debugging:
+  availability: on
+  
+tags:
+  - apple_sys_tag_version : 2020-04-29
+  - apple_sys_app_id : abcde
