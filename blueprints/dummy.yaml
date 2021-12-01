@@ -33,6 +33,7 @@ inputs:
   - AWS_INSTANCE_TYPE: t2.large
 
 applications:
+  - Amir-mongodb-copy
 
 services:
   - amir-sleep:
