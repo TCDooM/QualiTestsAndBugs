@@ -9,6 +9,7 @@ metadata:
   tags:
   - apple_sys_tag_version : 2020-04-29
   - apple_sys_app_id: abcde
+  - torque_tag: torque
   - test: value
 
 clouds:
