@@ -1,0 +1,17 @@
+spec_version: 1
+kind: TerraForm
+inputs:
+  - ROLE_ARN: 'PowerUserAccess'
+
+terraform_version: 0.14.5
+module:
+  source: github.com/QualiNext/terraform/publisher-consumer/publisher
+outputs:
+  - subnet_arn
+  - test_value1
+  - test_value2
+  - test_value3
+  - test_value4
+permissions:
+  aws:
+    role_arn: $ROLE_ARN
