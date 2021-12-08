@@ -1,0 +1,25 @@
+configuration:
+  healthcheck:
+    script: no-config-script-app-hc.sh
+    timeout: 420
+  start:
+    script: no-config-script-app-cm-command.sh
+source:
+  image:    
+    ami:                                                   # AWS Image
+    - id: ami-0f29c8402f8cce65c
+      region: eu-west-1
+      username: ubuntu
+    azure_image:
+    - urn: Canonical:UbuntuServer:16.04-LTS:latest
+      username: adminuser
+  os_type: linux
+infrastructure:
+  connectivity:
+    internal:
+    - port_info:
+        port: 3000
+kind: application
+spec_version: 1
+debugging:
+  connection_protocol: SSH
