@@ -14,4 +14,4 @@ services:
 - terraform-publisher  # creates aws resources to be tagged
 
 debugging:
-  bastion_availability: enabled
+  bastion_availability: enabled-on
