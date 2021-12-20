@@ -1,0 +1,57 @@
+inputs:
+- INSTANCETYPE: t3.small,t3.medium,c5.large,m5.large,m4.large
+- AZURE_VM_SIZE: Basic_A1
+- BUILD_NUM: 1.0
+- CHRONOS_SERVER_DNS: None
+- iam_instance_profile: SSMManagedInstanceRole
+- AWS_IRELAND_AMI_ID: ami-0f29c8402f8cce65c
+- AZURE_IMAGE_URN: Canonical:UbuntuServer:16.04-LTS:latest
+- DOCKER_IMAGE_NAME: quali/ubuntu
+- DOCKER_IMAGE_TAG: python36
+configuration:
+  healthcheck:
+    script: healthcheck.sh
+    timeout: 1000
+  initialization:
+    script: init.sh
+  start:
+    script: start.sh
+source:
+  image:
+    docker_image:
+    - name: $DOCKER_IMAGE_NAME
+      tag: $DOCKER_IMAGE_TAG
+    ami:
+    - id: $AWS_IRELAND_AMI_ID
+      region: eu-west-1
+      username: ubuntu
+    - id: ami-008c6427c8facbe08
+      region: us-west-2
+      username: ubuntu
+    azure_image:
+    - urn: $AZURE_IMAGE_URN
+  os_type: linux
+infrastructure:
+  compute:
+    spec:
+      aws:
+        instance_type: $INSTANCETYPE
+      azure:
+        vm_size: $AZURE_VM_SIZE
+  connectivity:
+    external:
+    - port_info:
+        port: 3000
+        path: ''
+        # this section is specified in order to override the default ingress health-check settings until we fix them in code (bug 4386)
+        ingress-healthcheck:
+          interval: 15
+          unhealthy-threshold: 4
+          healthy-threshold: 2
+  permissions:
+    aws:
+      iam_instance_profile: $iam_instance_profile
+debugging:
+  connection_protocol: SSH
+kind: application
+spec_version: 1
