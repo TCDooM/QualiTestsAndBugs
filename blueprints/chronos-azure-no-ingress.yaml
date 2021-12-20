@@ -1,0 +1,30 @@
+kind: blueprint
+spec_version: 1
+
+clouds:
+- azure-staging: westeurope
+
+applications:
+- chronos-server:
+    target: chronos
+    instances: 2
+    input_values:
+    - AZURE_VM_SIZE: Standard_D2_v3
+- chronos-client:
+    target: chronos
+    instances: 2
+    input_values:
+    - AZURE_VM_SIZE: Standard_D2_v3
+    - CHRONOS_SERVER_DNS: $torque.applications.chronos-server.dns
+    depends_on: 
+    - chronos-server
+
+artifacts:
+- chronos-server: 'chronos/server.py'
+- chronos-client: 'chronos/client.py'
+
+ingress:
+  enabled: false
+
+debugging:
+  bastion_availability: disabled
