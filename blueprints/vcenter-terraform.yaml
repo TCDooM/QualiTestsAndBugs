@@ -1,0 +1,13 @@
+spec_version: 2-preview
+
+description: test blueprint for deploying VMs on vcenter
+
+grains:
+  vm1:
+    kind: terraform
+    spec:
+      store: https://github.com/rannl-1980/QualiTestsAndBugs/tree/master/terraform
+      path: /vm1/
+      
+    host: vcenter0
+
