@@ -1,0 +1,23 @@
+spec_version: 2-preview
+
+description: test blueprint for deploying VMs on vcenter
+
+inputs:
+  vm_name:
+    type: string
+    display-style: normal
+    default: "vm"
+    description: "name of deployed vm"
+
+grains:
+  vm1:
+    kind: terraform
+    spec:
+      source: 
+         path: https://github.com/rannl-1980/QualiTestsAndBugs/tree/master/terraform/vm1
+      host:
+         cloud-account: private-cloud
+         compute-service: vcenter0
+      inputs:
+         input_name: .inputs.vm_name
+         
