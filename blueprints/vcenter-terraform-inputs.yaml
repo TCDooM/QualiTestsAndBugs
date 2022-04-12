@@ -19,5 +19,5 @@ grains:
          cloud-account: private-cloud
          compute-service: vcenter0
       inputs:
-         input_name: .inputs.vm_name
+         - input_name: {{.inputs.vm_name}}
          
