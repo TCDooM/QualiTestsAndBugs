@@ -1,16 +1,16 @@
-variable "user" {
+variable "private_cloud_login" {
   type = string
-  default = "yakir.l@qualisystems.local"
+  sensitive = true
 }
 
-variable "password" {
+variable "private_cloud_password" {
   type = string
-  default = "some-pass"
+  sensitive = true
 }
 
-variable "server" {
+variable "private_cloud_host" {
   type = string
-  default = "192.168.42.110"
+  sensitive = true
 }
 
 variable "virtual_machine_template_name" {
