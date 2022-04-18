@@ -37,7 +37,7 @@ resource "vsphere_virtual_machine" "vm" {
   datastore_id     = data.vsphere_datastore.ds.id
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   guest_id = data.vsphere_virtual_machine.template.guest_id
-  folder = "Yakir.l"
+  folder = "Torque"
   wait_for_guest_ip_timeout = -1
   wait_for_guest_net_timeout = -1
   network_interface {
