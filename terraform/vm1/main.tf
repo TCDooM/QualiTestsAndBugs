@@ -27,12 +27,12 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "template" {
-  name = "test1"
+  name = var.virtual_machine_template_name
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "terraform-test"
+  name             = var.virtual_machine_name
  #  resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.ds.id
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
