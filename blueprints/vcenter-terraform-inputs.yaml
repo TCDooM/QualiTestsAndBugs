@@ -19,11 +19,11 @@ grains:
     kind: terraform
     spec:
       source:
-         store: #TBD#
+         store: autogen_repo_sandbox_0eeb8db2
          path: /terraform/vm1
       host:
          cloud-account: private-cloud
-         compute-service: vcenter0
+         compute-service: vcenter
       inputs:
          - input_name: '{{.inputs.vm_name}}'
          - input_template_name: '{{.inputs.vm_template_name}}'
