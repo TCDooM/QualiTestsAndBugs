@@ -25,6 +25,6 @@ grains:
          cloud-account: private-cloud
          compute-service: vcenter
       inputs:
-         - input_name: '{{.inputs.vm_name}}'
-         - input_template_name: '{{.inputs.vm_template_name}}'
+         - input_name: '{{ .inputs.vm_name }}'
+         - input_template_name: '{{ .inputs.vm_template_name }}'
          
