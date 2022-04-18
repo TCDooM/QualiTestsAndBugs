@@ -15,9 +15,10 @@ variable "server" {
 
 variable "virtual_machine_template_name" {
   type = string
+  default = "test1"
 }
 
 variable "virtual_machine_name" {
   type = string
-  default = "vm started by a script"
+  default = "vm_from_torque"
 }
