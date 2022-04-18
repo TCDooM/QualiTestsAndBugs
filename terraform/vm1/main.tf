@@ -1,7 +1,7 @@
 provider "vsphere" {
-  user           = var.user
-  password       = var.password
-  vsphere_server = var.server
+  user           = var.private_cloud_login
+  password       = var.private_cloud_password
+  vsphere_server = var.private_cloud_host
   version        = "=1.15.0"
   # If you have a self-signed cert
   allow_unverified_ssl = true
