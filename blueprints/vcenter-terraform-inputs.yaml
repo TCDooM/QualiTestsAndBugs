@@ -3,12 +3,12 @@ spec_version: 2-preview
 description: test blueprint for deploying VMs on vcenter
 
 inputs:
-   vm_name:
+   - vm_name:
        type: string
        display-style: normal
        default: "vm"
        description: "name of deployed vm"
-   vm_template_name:
+   - vm_template_name:
        type: string
        display-style: normal
        default: "vm_template"
