@@ -19,8 +19,8 @@ outputs:
        value: '{{ .grains.vmInOut.outputs.vm_memory }}'
    vm_tools_status:
        value: '{{ .grains.vmInOut.outputs.vm_tools_status }}'
-   vm_ip_addr:
-       value: '{{ .grains.vmInOut.outputs.vm_guest_ip }}'
+   vm_mac_addr:
+       value: '{{ .grains.vmInOut.outputs.vm_mac_addr }}'
     
 grains:
   vmInOut:
@@ -38,4 +38,4 @@ grains:
       outputs:
          - vm_memory
          - vm_tools_status
-         - vm_guest_ip
+         - vm_mac_addr
