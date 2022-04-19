@@ -15,8 +15,6 @@ inputs:
        description: "name of vm template to use"
        
 outputs:
-   vm_default_ip:
-       value: '{{ .grains.vmInOut.outputs.vm_ip_addr }}'
    vm_memory:
        value: '{{ .grains.vmInOut.outputs.vm_memory }}'
     
@@ -34,5 +32,4 @@ grains:
          - virtual_machine_name: '{{ .inputs.vm_name }}'
          - virtual_machine_template_name: '{{ .inputs.vm_template_name }}'
       outputs:
-         - vm_ip_addr
          - vm_memory
