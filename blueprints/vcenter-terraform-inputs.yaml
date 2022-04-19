@@ -6,12 +6,12 @@ inputs:
    vm_name:
        type: string
        display-style: normal
-       default: "vm"
+       default: "vm_test"
        description: "name of deployed vm"
    vm_template_name:
        type: string
        display-style: normal
-       default: "vm_template"
+       default: "test1"
        description: "name of vm template to use"
     
 grains:
