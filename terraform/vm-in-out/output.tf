@@ -17,3 +17,8 @@ output "vm_guest_ip" {
   value = "${join(",",vsphere_virtual_machine.vm.guest_ip_addresses)}"
   description = "The guest IP address list of the raised VM"
 }
+
+output "vm_mac_addr" {
+  value = "${join(",",flatten(vsphere_virtual_machine.vm.network_interface.*.mac_address))}"
+  description = "The MAC address of the raised VM"
+}
