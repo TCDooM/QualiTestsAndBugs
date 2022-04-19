@@ -14,6 +14,6 @@ output "vm_tools_status" {
 }
 
 output "vm_guest_ip" {
-  value = vsphere_virtual_machine.vm.guest_ip_addresses
+  value = "${join(",",vsphere_virtual_machine.vm.guest_ip_addresses)}"
   description = "The guest IP address list of the raised VM"
 }
