@@ -17,6 +17,10 @@ inputs:
 outputs:
    vm_memory:
        value: '{{ .grains.vmInOut.outputs.vm_memory }}'
+   vm_tools_status:
+       value: '{{ .grains.vmInOut.outputs.vm_tools_status }}'
+   vm_ip_addr:
+       value: '{{ .grains.vmInOut.outputs.vm_ip_addr }}'
     
 grains:
   vmInOut:
@@ -33,3 +37,5 @@ grains:
          - virtual_machine_template_name: '{{ .inputs.vm_template_name }}'
       outputs:
          - vm_memory
+         - vm_tools_status
+         - vm_ip_addr
