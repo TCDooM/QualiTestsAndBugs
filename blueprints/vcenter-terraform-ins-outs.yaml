@@ -1,0 +1,29 @@
+spec_version: 2-preview
+
+description: test blueprint for deploying VMs on vcenter
+
+inputs:
+   vm_name:
+       type: string
+       display-style: normal
+       default: "vm_test"
+       description: "name of deployed vm"
+   vm_template_name:
+       type: string
+       display-style: normal
+       default: "test1"
+       description: "name of vm template to use"
+    
+grains:
+  vm1:
+    kind: terraform
+    spec:
+      source:
+         store: autogen_repo_sandbox_0eeb8db2
+         path: /terraform/vm-in-out
+      host:
+         cloud-account: private-cloud
+         compute-service: vcenter
+      inputs:
+         - virtual_machine_name: '{{ .inputs.vm_name }}'
+         - virtual_machine_template_name: '{{ .inputs.vm_template_name }}'
