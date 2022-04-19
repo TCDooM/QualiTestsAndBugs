@@ -61,3 +61,8 @@ output "vm_ip_addr" {
   value = vsphere_virtual_machine.vm.default_ip_address
   description = "The default IP address of the raised VM"
 }
+
+output "vm_power_state" {
+  value = vsphere_virtual_machine.vm.power_state
+  description = "The power state of the raised VM"
+}
