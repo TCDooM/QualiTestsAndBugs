@@ -1,0 +1,13 @@
+spec_version: 2-preview
+
+description: test faulty blueprint for deploying VMs on vcenter
+
+grains:
+  vm1:
+    kind: terraform
+    spec:
+      source: 
+         path: https://github.com/rannl-1980/QualiTestsAndBugs/tree/master/terraform/vm_faulty
+      host:
+         cloud-account: private-cloud
+         compute-service: vcenter0
