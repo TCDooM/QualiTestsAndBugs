@@ -8,7 +8,7 @@ grains:
     spec:
       source:
          store: QualiTestsAndBugs
-         path: /terraform//vm1
+         path: /terraform/vm1
       host:
          cloud-account: private-cloud
          compute-service: vcenter
