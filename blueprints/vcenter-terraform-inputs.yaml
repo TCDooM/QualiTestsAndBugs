@@ -19,7 +19,7 @@ grains:
     kind: terraform
     spec:
       source:
-         store: autogen_repo_sandbox_0eeb8db2
+         store: QualiTestAndBugs
          path: /terraform/vm1
       host:
          cloud-account: private-cloud
