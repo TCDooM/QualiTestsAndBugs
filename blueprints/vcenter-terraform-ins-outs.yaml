@@ -27,7 +27,7 @@ grains:
     kind: terraform
     spec:
       source:
-         store: QualiTestAndBugs
+         store: QualiTestsAndBugs
          path: /terraform/vm-in-out
       host:
          cloud-account: private-cloud
