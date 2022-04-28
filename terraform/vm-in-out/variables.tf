@@ -15,7 +15,7 @@ variable "private_cloud_host" {
 
 variable "virtual_machine_template_name" {
   type = string
-  default = "test1"
+  default = "photon-ova"
 }
 
 variable "virtual_machine_name" {
